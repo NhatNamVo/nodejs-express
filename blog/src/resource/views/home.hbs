@@ -1,1 +1,21 @@
-<h1>Home Page</h1>
+<div class="container home">
+    <div class="row list-cources">
+        {{#each cources}}
+        <div class="col-lg-4 col-sm-6">
+            <div class="card">
+                <a href="/courses/{{this.slug}}">
+                    <img class="card-img-top" src={{this.image}} alt="cource" />
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{this.name}} {{this.slug}}
+                        </h5>
+
+                        <p class="card-text">{{ this.description }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
