@@ -1,0 +1,48 @@
+{{#with data}}
+<form class="row m-4 g-3 needs-validation" validate method="POST" action={{this.action}}>
+    <div class="col-md-6">
+        <label for="name" class="form-label">Course Name</label>
+        {{this.action}}
+        {{~#if course.name}}
+        <input type="text" class="form-control" name="name" value={{this.course.name}} id="name" required>
+        {{~^~}}
+        <input type="text" class="form-control" name="name" id="name" required>
+        {{~/if~}}
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="description" class="form-label">Description</label>
+
+        {{~#if course.description}}
+        <input type="text" class="form-control" name="description" value={{this.course.description}} id="name" required>
+        {{~^~}}
+        <input type="text" class="form-control" name="description" id="description" required>
+        {{~/if~}}
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="image" class="form-label">Image</label>
+
+        {{~#if course.image}}
+        <input type="text" class="form-control" name="image" value={{this.course.image}} id="image" required>
+        {{~^~}}
+        <input type="text" class="form-control" name="image" id="image" required>
+        {{~/if~}}
+
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-12 center">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+</form>
+{{/with}}

@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
 
 const app = express();
@@ -23,7 +24,7 @@ app.use(
 app.use(express.json()); // dạng gửi từ javascript gửi lên
 
 app.use(morgan('combined'));
-
+app.use(methodOverride('_method'))
 // template engine
 app.engine(
   'hbs',

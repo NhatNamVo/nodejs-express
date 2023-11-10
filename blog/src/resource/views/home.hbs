@@ -14,8 +14,34 @@
                         <p class="card-text">{{ this.description }}</p>
                     </div>
                 </a>
+
+                <div class="flex">
+                    <a href="/courses/{{this._id}}/edit">
+                        <button class="btn btn-success">Edit</button>
+                    </a>
+
+                    <button data-id="{{this._id}}" class="btn btn-danger delete-course-button">Delete</button>
+                </div>
             </div>
         </div>
         {{/each}}
     </div>
+
+    <form class="hidden" id="delete-course-form" method="POST" name="delete-course-form"></form>
 </div>
+
+<script>
+    const courseListElement = document.querySelector('.list-cources');
+    const formElement = document.forms['delete-course-form'];
+
+    courseListElement.addEventListener('click', function (event) {
+        if (event.target.closest('button.delete-course-button')) {
+            const deleteButton = event.target.closest('button.delete-course-button');
+            const courseId = deleteButton.dataset.id;
+            formElement.action = `/courses/${courseId}?_method=DELETE`;
+
+            formElement.submit();
+        }
+    });
+
+</script>
