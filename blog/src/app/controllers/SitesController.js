@@ -4,7 +4,7 @@ const Cource = require("../models/Cource");
 class SitesController {
   // [GET] /home
   index(req, res, next) {
-    Cource.findWithDeleted({}).then(response => {
+    Cource.find({}).then(response => {
       res.render('home', { cources: mutipleMongooseToObject(response) });
     }).catch(next)
   }

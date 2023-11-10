@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "method-override": "^3.0.0",
-    "mongoose-delete": "^1.0.1",
-    "mongoose-slug-generator": "^1.0.4",
-    "mongoose-softdelete": "^1.2.0"
-  }
-}
